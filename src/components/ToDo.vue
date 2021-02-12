@@ -2,22 +2,26 @@
 
   <div class="container">
 
+
     <h1>TODO LIST IN VUE JS </h1>
 
-    <div  v-if="!isEdit">
-      <input  type="text" v-model="Todo">
+
+    <div  class="form-check" v-if="!isEdit">
+
+      <input  type="text" v-model="Todo"><br><br>
 
       <input type="submit" value="Add" @click="AddToList"><br>
 
     </div>
 
-    <div  v-else>
+
+    <div  class="form-check"  v-else>
       <input  type="text" v-model="Todo"><br><br>
       <input type="submit" value="Update" @click="updatelist"><br>
     </div>
 
     <ol>
-
+             
       <li v-for="(Todo, index) in todos" :key="index">
         {{ Todo }}<br>
         <button @click="editList(index, Todo)">Edit</button> &nbsp;  &nbsp;
